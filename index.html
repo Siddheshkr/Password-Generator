@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link type="image/png" sizes="32x32" rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAACdUlEQVR4nO1XPW8TQRC9vwBOj+lSQPiwd88IS5ZnbWILCqiSNgUNEgXQgOyEAgQNMc4fAEUCRAENREoHBYjGMUb8AKQY6O3snu84fwzaQ4GAb+/27ENp8qSRTnO7O29v38zOGcYBJkDnXOYwL2SOC0iXpcln6TP+J+wiPSqArnBGmoJR9LNf78iynTOTsQXeyaVmBCN1DvSHKvAYEaCOAFLrMpKYKrhg6VMcaFs38DgR8t2CFJ0ouAXkEmfEnjT4nmPpWUAvRts5ZE5zoNa0wfeQsLW/xE4uNSM/XVzB95D4pqUJAXQtdMGCic7dCvY3X2N/8xU6dyqeL3QekFpoqnENtbsvnyMOhzj42MBBa8t7dl8808qOwBQVQG+HLWItXkAcDNCp3fvtcx7eR+z30Vo4r3EcZFlJgANthS1gV2+ghChl//jLWc9nV67raKGpLq+MjpST58+iW6/hcGMD8cs29h8/+sukT75z66veWDUBOvIt2yJPTwTu/OplxOZnLZNjg7Vgzvmcf7ocNMm5dkWbgBwbooPSOAFGSlEIuG/eYSsP2AKG7tv30QgUyLyPAM25KAQ660/ww+ysZ531p5EIyOs7sgidfwiMGp+wfbOC7VtV71mXgCfCbPaQfxoy9V0flwY40IayDgigK6qJvaVFbQK9pYUgAVaVBOycmfSaiQAScndBJscE7N7p5c8cURKQkBdGWDWbwh4YYegykpBXZ9zBOSNftRtXsZ8NyS5kGyXbqX1pyXYhiuQkB7o9VVPK0sSYBl1GElKYQdnhp3YBdDXWnxU7ZyZlM6EqVrLCcUa2ZJ6Hplrsv2bF9DFleT2AEYyfGA36yv45lZwAAAAASUVORK5CYII=">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./assets/index-c83aacca.css">
+  </head>
+  <body class="bg-gradient-to-tr from-gray-700 via-gray-900 to-black">
+    <div
+      class="w-screen h-screen flex flex-col gap-10 justify-center items-center"
+    >
+      <span
+        class="text-2xl sm:text-2xl md:text-3xl lg:text-3xl text-white font-bold"
+      >
+        <i class="ri-lock-fill px-1 text-white"></i>Password Generator
+      </span>
+
+      <div
+        class="w-80 sm:w-80 md:w-96 lg:w-96 xl:w-96 h-96 sm:h-96 md:h-96 lg:h-96 ml-5 mr-5 bg-gradient-to-r from-red-500 to-red-800 rounded-xl flex flex-col justify-center shadow-md shadow-black px-5 py-4"
+      >
+        <div class="flex justify-center relative">
+          <input
+            type="text"
+            id="pasbox"
+            disabled
+            class="w-80 sm:w-80 md:w-96 lg:w-96 h-7 py-5 px-2 bg-white text-slate-900 shadow-md shadow-black font-medium border-0 outline-none rounded-3xl transition-all duration-500"
+          />
+          <i
+            id="copyicon"
+            class="ri-file-copy-line cursor-pointer text-slate-950 absolute text-xl right-2 top-2 hover:scale-105 hover:text-red-700 hover:font-bold"
+          ></i>
+          <i
+            id="tickicon"
+            class="ri-check-double-line absolute right-2 top-2 hidden text-xl text-green-700 font-bold"
+          ></i>
+        </div>
+
+        <div class="flex justify-center mt-6">
+          <input
+            type="range"
+            min="4"
+            max="16"
+            id="slider"
+            class="w-[260px] md:w-[300px] mx-2 cursor-pointer accent-slate-950"
+          />
+
+          <span id="slidervalue" class="text-white font-bold"></span>
+        </div>
+        <div class="flex flex-col gap-2 mt-4">
+          <label class="text-white cursor-pointer"
+            ><input
+              type="checkbox"
+              id="Uppercase"
+              checked
+              class="cursor-pointer accent-black w-[15px] h-[15px]"
+            />
+            Include Uppercase(A-Z)</label
+          >
+          <label class="text-white cursor-pointer"
+            ><input
+              type="checkbox"
+              id="Lowecase"
+              checked
+              class="cursor-pointer accent-black w-[15px] h-[15px]"
+            />
+            Include Lowecase(a-z)</label
+          >
+          <label class="text-white cursor-pointer"
+            ><input
+              type="checkbox"
+              id="Numbers"
+              checked
+              class="cursor-pointer accent-black w-[15px] h-[15px]"
+            />
+            Include Numbers(0-9)</label
+          >
+          <label class="text-white cursor-pointer"
+            ><input
+              type="checkbox"
+              id="Symbols"
+              class="cursor-pointer accent-black w-[15px] h-[15px]"
+            />
+            Include Symbols(~!@#$%)</label
+          >
+        </div>
+
+        <button
+          type="button"
+          id="Generate"
+          class="text-white bg-gradient-to-r from-red-400 via-slate-800 to-slate-600 hover:bg-gradient-to-br focus:outline-none active:ring-slate-700 dark:active:ring-black shadow-md shadow-black font-bold rounded-3xl text-xl py-2 mt-5"
+        >
+          Generate
+        </button>
+      </div>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
